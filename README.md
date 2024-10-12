@@ -127,5 +127,48 @@ Configure listeners to forward HTTP traffic (port 80) to your EC2 instances.
 Add domain to Cloudflare
 Create DNS records
 
+### Configure Nginx as a Reverse Proxy
+Follow the steps outlined in your previous documentation to set up Nginx as a reverse proxy for both the frontend and backend.
+
+## Load Balancing
+To ensure efficient distribution of incoming traffic:
+
+1. Create Multiple EC2 Instances for both frontend and backend.
+2. Set Up an AWS Elastic Load Balancer (ELB) to manage traffic across these instances.
+3. Add the instances to the ELB and configure health checks to ensure traffic is routed only to healthy instances.
+4. 
+## Domain Setup with Cloudflare
+1. Create an Account on Cloudflare and add your domain.
+2. Configure DNS Records:
+     Create a CNAME record pointing to your load balancer endpoint.
+     Create an A record with the IP address of the EC2 instance hosting the frontend.
+## Contributing
+Contributions are welcome! If you have suggestions for improvements, please fork the repo and submit a pull request.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Acknowledgments
+Thanks to UnpredictablePrashant for the original TravelMemory codebase.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
