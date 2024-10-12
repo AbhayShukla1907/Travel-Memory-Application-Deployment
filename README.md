@@ -3,7 +3,7 @@
 `.env` file to work with the backend after creating a database in mongodb: 
 
 ```
-MONGO_URI='ENTER_YOUR_URL'
+MONGO_URI='mongodb+srv://abhay06072002:D0fiQ4heOhotB5Wq@abhaycluster.xfyr2p6.mongodb.net/tmbatch7'
 PORT=3001
 ```
 
