@@ -24,3 +24,108 @@ Data format to be added:
     "featured": true
 }
 ```
+
+
+## Table of Contents
+Project Description
+Technologies Used
+Installation Instructions
+Usage
+Deployment
+Load Balancing
+Domain Setup with Cloudflare
+Contributing
+License
+Acknowledgments
+
+
+## Project Description
+The TravelMemory application is a full-stack web application built using the MERN stack (MongoDB, Express.js, React, Node.js). The purpose of this project is to allow users to document their travel experiences and memories in a user-friendly interface. This repository contains the code and configuration for deploying the application on Amazon EC2, ensuring scalability and efficient user access.
+
+
+## Technologies Used
+Frontend: React.js
+Backend: Node.js, Express.js
+Database: MongoDB
+Deployment: Amazon EC2
+Load Balancing: AWS Elastic Load Balancer
+Domain Management: Cloudflare
+Other Tools: Nginx, Git
+
+## Installation Instructions
+### Prerequisites
+Node.js and npm installed on your local machine.
+Git installed on your local machine.
+An AWS account for deploying the application.
+
+### Clone the Repository
+    git clone https://github.com/UnpredictablePrashant/TravelMemory
+
+### Navigate to the Project Directory
+    cd TravelMemory/backend
+
+### Install dependencies
+    npm install
+
+Configure .env file:
+Update the .env file with your MongoDB credentials and port details.
+
+### Start the backend
+    npm start
+
+### Configure Nginx as a reverse proxy
+    sudo nano /etc/nginx/sites-available/default
+
+Add the following configuration
+
+        server {
+    listen 80;
+    server_name your-ec2-public-ip;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+Restart Nginx:
+
+     sudo systemctl restart nginx
+
+##  Frontend and Backend Connection
+### Set up the frontend
+
+Navigate to the frontend directory
+
+     cd ../frontend
+Install frontend dependencies
+
+    npm install
+
+ ### Update urls.js to connect to the backend
+
+Open urls.js in a text editor
+
+    nano src/config/urls.js
+    
+### Build the frontend
+    npm run build
+ 
+## Scaling the Application
+### Launch additional EC2 instances
+Repeat the earlier steps to launch additional EC2 instances
+
+### Set up an AWS Load Balancer
+reate a new load balancer.
+Add the instances (frontend and backend) to the load balancer.
+Configure listeners to forward HTTP traffic (port 80) to your EC2 instances.
+
+## Domain Setup with Cloudflare
+Add domain to Cloudflare
+Create DNS records
+
+
+
