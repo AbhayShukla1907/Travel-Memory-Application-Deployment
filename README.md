@@ -121,14 +121,14 @@ Repeat the earlier steps to launch additional EC2 instances
 ### Set up an AWS Load Balancer
 reate a new load balancer.
 Add the instances (frontend and backend) to the load balancer.
-Configure listeners to forward HTTP traffic (port 80) to your EC2 instances.
+Configure listeners to forward HTTP traffic (port 80) to EC2 instances.
 
 ## Domain Setup with Cloudflare
 Add domain to Cloudflare
 Create DNS records
 
 ### Configure Nginx as a Reverse Proxy
-Follow the steps outlined in your previous documentation to set up Nginx as a reverse proxy for both the frontend and backend.
+Follow the steps outlined in previous documentation to set up Nginx as a reverse proxy for both the frontend and backend.
 
 ## Load Balancing
 To ensure efficient distribution of incoming traffic:
@@ -138,12 +138,12 @@ To ensure efficient distribution of incoming traffic:
 3. Add the instances to the ELB and configure health checks to ensure traffic is routed only to healthy instances.
 4. 
 ## Domain Setup with Cloudflare
-1. Create an Account on Cloudflare and add your domain.
+1. Create an Account on Cloudflare and add domain.
 2. Configure DNS Records:
-     Create a CNAME record pointing to your load balancer endpoint.
+     Create a CNAME record pointing to load balancer endpoint.
      Create an A record with the IP address of the EC2 instance hosting the frontend.
 ## Contributing
-Contributions are welcome! If you have suggestions for improvements, please fork the repo and submit a pull request.
+Contributions are welcome!
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
